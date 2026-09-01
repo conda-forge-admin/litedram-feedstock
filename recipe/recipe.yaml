@@ -24,12 +24,12 @@ build:
 
 requirements:
   host:
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - setuptools
   run:
     - python >=${{ python_min }}
-    - litex ~=${{ version }}*
+    - litex ~=${{ version }}
     - packaging
     - pyyaml
 
@@ -43,7 +43,7 @@ tests:
         - "*"
   - requirements:
       run:
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
     script:
       - litedram_gen --help
 
